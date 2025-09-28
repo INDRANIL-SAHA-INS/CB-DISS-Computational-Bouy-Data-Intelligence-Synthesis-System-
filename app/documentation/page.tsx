@@ -83,9 +83,9 @@ export default function DocumentationPage() {
 			<main className="pt-16 pb-20">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 					<div className="text-center mb-12">
-						<h1 className="text-4xl text-red-600 font-bold mb-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-							Our team is dedicated to building this project<br></br> hold on to us
-						</h1>
+            <h1 className="text-4xl font-bold mb-4 text-red-600">
+              Our team is dedicated to building this project<br />hold on to us
+            </h1>
 						
 					</div>
 
