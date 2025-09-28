@@ -1,5 +1,3 @@
-'use client';
-
 import { ArrowLeft } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import ChatInterface from '@/components/ChatInterface';
@@ -9,11 +7,11 @@ import {
   TechnicalHealthCard, 
   MetadataCard 
 } from '@/components/FloatDetailCard';
+import Link from 'next/link';
 
-export default function FloatDetailPage({ params }: { params: { id: string } }) {
-  const handleBackClick = () => {
-    window.history.back();
-  };
+export default async function FloatDetailPage(props: PageProps<"/data-stories/float/[id]">) {
+  const params = await props.params;
+  const id = params.id;
 
   return (
   <div className="min-h-screen bg-background text-foreground">
@@ -22,19 +20,19 @@ export default function FloatDetailPage({ params }: { params: { id: string } }) 
       <main className="pt-16 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="mb-8">
-            <button
-              onClick={handleBackClick}
+            <Link
+              href="/data-stories"
               className="flex items-center space-x-2 text-accent hover:text-primary transition-colors mb-4"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Data Stories</span>
-            </button>
+            </Link>
             
             <h1 className="text-3xl font-bold mb-2">
-              Float {params.id} - Detailed Analysis
+              Float {id} - Detailed Analysis
             </h1>
             <p className="text-muted-foreground">
-              Comprehensive data and analysis for ARGO float {params.id}
+              Comprehensive data and analysis for ARGO float {id}
             </p>
           </div>
           
