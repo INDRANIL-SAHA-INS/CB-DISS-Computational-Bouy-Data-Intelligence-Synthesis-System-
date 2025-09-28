@@ -1,0 +1,168 @@
+
+/* Ensure the chat prompt is always above the map */
+.premium-leaflet .leaflet-container {
+  z-index: 0 !important;
+}
+/* Premium scientific map style for Leaflet */
+.premium-leaflet .leaflet-container {
+  filter: saturate(0.8) brightness(0.9) hue-rotate(10deg);
+  -webkit-filter: saturate(0.8) brightness(0.9) hue-rotate(10deg);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.65rem;
+}
+
+/* Custom scrollbar styles - Premium Dark Theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2B2B2B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3A3A3A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #007B8C;
+}
+
+/* Custom scrollbar for chat input */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(138, 138, 138, 0.3);
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 123, 140, 0.5);
+}
+
+/* Premium Dark Theme - Futuristic chat input enhancements */
+.chat-input-glow {
+  box-shadow: 
+    0 0 20px rgba(0, 123, 140, 0.15),
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(224, 224, 224, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.chat-input-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(0, 123, 140, 0.25),
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(224, 224, 224, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Leaflet popup customization - Premium Dark Theme */
+.leaflet-popup-content-wrapper {
+  background: #2B2B2B !important;
+  color: #E0E0E0 !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(58, 58, 58, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #2B2B2B !important;
+  border: 1px solid rgba(58, 58, 58, 0.5) !important;
+}
+
+/* Fix for Leaflet IE filter issues */
+.leaflet-oldie .leaflet-control-zoom-in {
+  filter: none !important;
+}
+
+.leaflet-oldie .leaflet-control-zoom-out {
+  filter: none !important;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@layer base {
+  :root {
+    /* Ocean & Earth inspired palette */
+    --background: 0 0% 0% / 0%; /* fully transparent */
+    --foreground: 210 30% 15%; /* deep navy */
+    --card: 197 100% 97%; /* pale aqua */
+    --card-foreground: 210 30% 15%;
+    --popover: 197 100% 97%;
+    --popover-foreground: 210 30% 15%;
+    --primary: 199 100% 38%; /* ocean blue */
+    --primary-foreground: 197 100% 97%;
+    --secondary: 43 74% 85%; /* sand */
+    --secondary-foreground: 210 30% 15%;
+    --muted: 160 36% 85%; /* seafoam */
+    --muted-foreground: 199 100% 38%;
+    --accent: 160 36% 60%; /* teal */
+    --accent-foreground: 197 100% 97%;
+    --destructive: 12 76% 61%; /* coral */
+    --destructive-foreground: 0 0% 100%;
+    --border: 199 100% 85%; /* light blue border */
+    --input: 43 74% 85%; /* sand input */
+    --ring: 199 100% 38%;
+    --chart-1: 199 100% 38%; /* ocean blue */
+    --chart-2: 160 36% 60%; /* teal */
+    --chart-3: 43 74% 66%; /* sand */
+    --chart-4: 120 40% 40%; /* forest green */
+    --chart-5: 27 87% 67%; /* earth orange */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 210 30% 10%; /* deep navy */
+    --foreground: 197 100% 97%; /* pale aqua */
+    --card: 210 30% 15%; /* navy card */
+    --card-foreground: 197 100% 97%;
+    --popover: 210 30% 15%;
+    --popover-foreground: 197 100% 97%;
+    --primary: 199 100% 60%; /* lighter ocean blue */
+    --primary-foreground: 210 30% 10%;
+    --secondary: 43 74% 40%; /* deep sand */
+    --secondary-foreground: 197 100% 97%;
+    --muted: 160 36% 30%; /* deep teal */
+    --muted-foreground: 197 100% 97%;
+    --accent: 160 36% 40%; /* deep teal */
+    --accent-foreground: 197 100% 97%;
+    --destructive: 12 76% 41%; /* deep coral */
+    --destructive-foreground: 197 100% 97%;
+    --border: 210 30% 20%; /* navy border */
+    --input: 43 74% 40%; /* deep sand input */
+    --ring: 199 100% 60%;
+    --chart-1: 199 100% 60%; /* lighter ocean blue */
+    --chart-2: 160 36% 40%; /* deep teal */
+    --chart-3: 43 74% 50%; /* deep sand */
+    --chart-4: 120 40% 30%; /* deep forest green */
+    --chart-5: 27 87% 47%; /* deep earth orange */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Subtle ocean/earth gradient background */
+    background: linear-gradient(135deg, hsl(200, 100%, 98%) 0%, hsl(160, 36%, 85%) 60%, hsl(43, 74%, 85%) 100%);
+  }
+}
