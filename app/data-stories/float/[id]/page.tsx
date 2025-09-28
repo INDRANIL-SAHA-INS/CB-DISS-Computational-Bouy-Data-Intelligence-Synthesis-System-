@@ -10,13 +10,7 @@ import {
   MetadataCard 
 } from '@/components/FloatDetailCard';
 
-interface FloatDetailPageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function FloatDetailPage({ params }: FloatDetailPageProps) {
+export default function FloatDetailPage({ params }: { params: { id: string } }) {
   const handleBackClick = () => {
     window.history.back();
   };
