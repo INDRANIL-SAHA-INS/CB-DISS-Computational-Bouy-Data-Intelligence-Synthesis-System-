@@ -12,7 +12,10 @@ export async function POST(req) {
     // **CRITICAL CHECK:** Ensure the key is available before proceeding.
     if (!apiKey) {
       return new Response(
-        JSON.stringify({ error: "Configuration Error: API Key is missing." }),
+        JSON.stringify({
+          error: "Configuration Error: API Key is missing.",
+          info: "If you are unable to connect with AI, please use this link: https://cb-diss-computational-bouy-data-int.vercel.app/"
+        }),
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
@@ -39,7 +42,10 @@ export async function POST(req) {
     // Log and return errors in a safe way
     console.error("Error processing request:", error);
     return new Response(
-      JSON.stringify({ error: "Internal Server Error during AI execution." }),
+      JSON.stringify({
+        error: "Internal Server Error during AI execution.",
+        info: "If you are unable to connect with AI, please use this link: https://cb-diss-computational-bouy-data-int.vercel.app/"
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
