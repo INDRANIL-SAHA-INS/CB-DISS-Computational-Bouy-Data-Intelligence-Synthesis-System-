@@ -4,7 +4,7 @@ import React from "react";
 // ...existing code...
 
 const handleClick = () => {
-  window.location.href = "https://cb-diss-computational-bouy-data-int-five.vercel.app/";
+  window.location.href = "https://cb-diss-computational-bouy-data-int.vercel.app/";
 };
 
 // ...existing code...
