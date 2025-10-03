@@ -1,4 +1,18 @@
 'use client';
+import React from "react";
+
+// ...existing code...
+
+const handleClick = () => {
+  window.location.href = "https://cb-diss-computational-bouy-data-int-five.vercel.app/";
+};
+
+// ...existing code...
+
+// Add the button to the Navigation component's JSX
+// Find the main return statement and add:
+// <button onClick={handleClick} style={{ marginLeft: '1rem', padding: '0.5rem 1rem', background: '#0070f3', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Click Me</button>
+
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -84,6 +98,13 @@ export default function Navigation({ isSidebarCollapsed = false }: NavigationPro
                 </Link>
               );
             })}
+            {/* Go to Main Site Button */}
+            <button
+              onClick={handleClick}
+              className="ml-4 px-4 py-2 bg-[#0070f3] text-white rounded-md font-semibold shadow hover:bg-[#005bb5] transition-colors duration-200"
+            >
+              Go to Main Site
+            </button>
           </div>
 
           {/* User Icon */}
@@ -100,6 +121,13 @@ export default function Navigation({ isSidebarCollapsed = false }: NavigationPro
               className="p-2 rounded-md text-[#B0BEC5] hover:text-[#00B4D8] hover:bg-[#22304A] transition-all duration-200"
             >
               <Menu className="w-6 h-6" />
+            </button>
+            {/* Go to Main Site Button for mobile */}
+            <button
+              onClick={handleClick}
+              className="ml-2 px-3 py-1 bg-[#0070f3] text-white rounded-md font-semibold shadow hover:bg-[#005bb5] transition-colors duration-200"
+            >
+              Go to Main Site
             </button>
           </div>
         </div>
