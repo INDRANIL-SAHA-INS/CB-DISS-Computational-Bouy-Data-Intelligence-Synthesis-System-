@@ -1,0 +1,38 @@
+{
+  "info": {
+    "_postman_id": "cb-diss-general-chat-api",
+    "name": "General Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST /api/General-chat",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prompt\": \"Your question or message here\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/General-chat",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "General-chat"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
