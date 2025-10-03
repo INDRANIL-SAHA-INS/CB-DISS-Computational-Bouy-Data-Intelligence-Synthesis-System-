@@ -7,10 +7,8 @@ import { HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 // Define the POST handler for the chat API endpoint
 export async function POST(req) {
   try {
-    // 1. HARDCODED KEY: This resolves the 'undefined' error in testing.
-    //    ***FOR PRODUCTION: Replace this with process.env.GOOGLE_API_KEY***
-    const apiKey = "AIzaSyCOX94TlKrzrZP8I-6nhgzM10UZA290fKU"; 
-    
+    // Use the API key from environment variables for security
+    const apiKey = process.env.GOOGLE_API_KEY;
     // **CRITICAL CHECK:** Ensure the key is available before proceeding.
     if (!apiKey) {
       return new Response(
